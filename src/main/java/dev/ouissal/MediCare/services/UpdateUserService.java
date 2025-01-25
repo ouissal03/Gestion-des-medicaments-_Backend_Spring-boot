@@ -1,8 +1,10 @@
 package dev.ouissal.MediCare.services;
 
 import dev.ouissal.MediCare.DTOs.UpdateUserRequest;
+import dev.ouissal.MediCare.jwt.util.JwtUtil;
 import dev.ouissal.MediCare.models.User;
 import dev.ouissal.MediCare.repositories.UserRepository;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -15,8 +17,23 @@ public class UpdateUserService {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private JwtUtil jwtUtil;
     private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
+    public User getUserById(HttpServletRequest request) {
+        // Extract JWT token from cookies
+        String token = extractTokenFromCookies(request);
+        if (token == null || !jwtUtil.isTokenValid(token)) {
+            throw new RuntimeException("Invalid or missing authentication token.");
+        }
+
+        String userId = jwtUtil.extractUserId(token);
+
+        // Use orElseThrow to handle Optional properly
+        return userRepository.findById(userId)
+                .orElseThrow(() -> new RuntimeException("User not found with ID: " + userId));
+    }
 
     public void updateUser(String email, UpdateUserRequest updateUserRequest) {
         User user = userRepository.findByEmail(email)
@@ -43,11 +60,20 @@ public class UpdateUserService {
             user.setImage(updateUserRequest.getImage());
         }
 
-        // Update the timestamp
         user.setUpdatedAt(Instant.now());
 
-        // Save the updated user to the database
         userRepository.save(user);
     }
 
+
+    private String extractTokenFromCookies(HttpServletRequest request) {
+        if (request.getCookies() != null) {
+            for (var cookie : request.getCookies()) {
+                if ("JWT".equals(cookie.getName())) {
+                    return cookie.getValue();
+                }
+            }
+        }
+        return null;
+    }
 }
