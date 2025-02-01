@@ -6,6 +6,7 @@ import dev.ouissal.MediCare.models.User;
 import dev.ouissal.MediCare.services.AuthService;
 import dev.ouissal.MediCare.services.UpdateUserService;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
@@ -33,7 +34,7 @@ public class UpdateUserController {
     }
 
     @PutMapping
-    public ResponseEntity<?> updateUser(@RequestBody UpdateUserRequest updateUserRequest) {
+    public ResponseEntity<?> updateUser(@Valid @RequestBody UpdateUserRequest updateUserRequest) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String email = authentication.getName(); // Get email from authenticated user
         System.out.println("Authenticated email: " + email);
