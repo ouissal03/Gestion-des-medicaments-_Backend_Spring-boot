@@ -39,6 +39,12 @@ public class UpdateUserController {
         String email = authentication.getName(); // Get email from authenticated user
         System.out.println("Authenticated email: " + email);
 
+        if (updateUserRequest.hasUnknownFields()) {
+            return ResponseEntity.badRequest().body(Map.of(
+                    "error", "Invalid field(s): " + updateUserRequest.getUnknownFields().keySet()
+            ));
+        }
+
         try {
             updateUserService.updateUser(email, updateUserRequest);
             return ResponseEntity.ok(Map.of(

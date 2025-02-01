@@ -1,13 +1,16 @@
 package dev.ouissal.MediCare.DTOs;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Data
-@JsonIgnoreProperties(ignoreUnknown = false) // Reject unknown fields
 public class UpdateUserRequest {
 
     @JsonProperty("firstName")
@@ -28,4 +31,16 @@ public class UpdateUserRequest {
 
     @JsonProperty("image")
     private String image;
+
+    @JsonIgnore
+    private Map<String, Object> unknownFields = new HashMap<>();
+
+    @JsonAnySetter
+    public void setUnknownField(String key, Object value) {
+        unknownFields.put(key, value);
+    }
+
+    public boolean hasUnknownFields() {
+        return !unknownFields.isEmpty();
+    }
 }
