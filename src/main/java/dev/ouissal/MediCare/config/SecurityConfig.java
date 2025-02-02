@@ -1,5 +1,6 @@
 package dev.ouissal.MediCare.config;
 
+import dev.ouissal.MediCare.jwt.JwtAuthenticationFilter;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.context.annotation.Bean;

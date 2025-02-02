@@ -1,7 +1,7 @@
 package dev.ouissal.MediCare.services;
 
 import dev.ouissal.MediCare.DTOs.UpdateUserRequest;
-import dev.ouissal.MediCare.jwt.util.JwtUtil;
+import dev.ouissal.MediCare.jwt.JwtUtil;
 import dev.ouissal.MediCare.models.User;
 import dev.ouissal.MediCare.repositories.UserRepository;
 import jakarta.servlet.http.HttpServletRequest;

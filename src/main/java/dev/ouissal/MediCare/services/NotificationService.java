@@ -2,7 +2,7 @@ package dev.ouissal.MediCare.services;
 
 import dev.ouissal.MediCare.models.Notification;
 import dev.ouissal.MediCare.repositories.NotificationRepository;
-import dev.ouissal.MediCare.jwt.util.JwtUtil;
+import dev.ouissal.MediCare.jwt.JwtUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

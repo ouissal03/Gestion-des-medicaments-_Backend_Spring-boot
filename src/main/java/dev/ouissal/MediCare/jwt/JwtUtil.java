@@ -1,4 +1,4 @@
-package dev.ouissal.MediCare.jwt.util;
+package dev.ouissal.MediCare.jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

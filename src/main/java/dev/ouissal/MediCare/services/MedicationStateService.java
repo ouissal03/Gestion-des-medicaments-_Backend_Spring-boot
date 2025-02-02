@@ -1,6 +1,6 @@
 package dev.ouissal.MediCare.services;
 
-import dev.ouissal.MediCare.jwt.util.JwtUtil;
+import dev.ouissal.MediCare.jwt.JwtUtil;
 import dev.ouissal.MediCare.models.MedicationState;
 import dev.ouissal.MediCare.models.Pillbox;
 import dev.ouissal.MediCare.repositories.MedicationStateRepository;

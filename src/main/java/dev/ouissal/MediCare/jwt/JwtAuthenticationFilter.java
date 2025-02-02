@@ -1,6 +1,5 @@
-package dev.ouissal.MediCare.config;
+package dev.ouissal.MediCare.jwt;
 
-import dev.ouissal.MediCare.jwt.util.JwtUtil;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;

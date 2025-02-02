@@ -2,12 +2,11 @@ package dev.ouissal.MediCare.services;
 
 import dev.ouissal.MediCare.DTOs.LoginRequest;
 import dev.ouissal.MediCare.DTOs.RegisterRequest;
-import dev.ouissal.MediCare.DTOs.UpdateUserRequest;
 import dev.ouissal.MediCare.models.Pillbox;
 import dev.ouissal.MediCare.models.User;
 import dev.ouissal.MediCare.repositories.PillboxRepository;
 import dev.ouissal.MediCare.repositories.UserRepository;
-import dev.ouissal.MediCare.jwt.util.JwtUtil;
+import dev.ouissal.MediCare.jwt.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
