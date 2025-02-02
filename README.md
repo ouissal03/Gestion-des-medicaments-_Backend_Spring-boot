@@ -1,5 +1,5 @@
-MediCare - Système de gestion de médicaments 💊
-
+**MediCare - Système de gestion de médicaments 💊**
+===
 MediCare est un système intelligent de gestion de la prise de médicaments conçu pour aider les patients, les personnes âgées et ceux qui ont tendance à oublier leurs médicaments. Il permet :
 
 - De rappeler aux patients de prendre leurs médicaments à temps
