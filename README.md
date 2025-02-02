@@ -19,8 +19,8 @@ Ce repository contient l'API backend développée avec Spring Boot et MongoDB. I
   
 Technologies utilisées :
 
-Spring Boot
-Spring Security
-RabbitMQ
-MongoDB
-RESTful API
+- Spring Boot
+- Spring Security
+- RabbitMQ
+- MongoDB
+- RESTful API
