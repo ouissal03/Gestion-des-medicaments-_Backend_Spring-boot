@@ -7,8 +7,8 @@ MediCare est un système intelligent de gestion de la prise de médicaments con�
 - De fournir une interface aux responsables (famille, soignants) pour consulter les états de prise de médicaments des patients
 - Le système repose sur une architecture IoT et cloud, intégrant un ESP8266 avec des capteurs, un backend Spring Boot & MongoDB, et un frontend Angular & Bootstrap. La communication entre les composants se fait via RabbitMQ.
 
-🖥️ Backend (Spring Boot & MongoDB)
-
+**🖥️ Backend (Spring Boot & MongoDB)**
+===
 Description :
 Ce repository contient l'API backend développée avec Spring Boot et MongoDB. Il offre les fonctionnalités suivantes :
 
