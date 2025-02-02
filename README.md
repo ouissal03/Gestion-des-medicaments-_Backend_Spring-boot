@@ -16,7 +16,7 @@ Ce repository contient l'API backend développée avec Spring Boot et MongoDB. I
 - Gestion des états de prise de médicaments
 - Gestion des notifications
 - Communication via RabbitMQ pour traiter les messages envoyés par l'ESP8266
-- 
+  
 Technologies utilisées :
 
 Spring Boot
